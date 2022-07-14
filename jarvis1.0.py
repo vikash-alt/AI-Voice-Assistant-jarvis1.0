@@ -16,8 +16,10 @@ import cv2
 import pywhatkit
 
 engine = pyttsx3.init()
-wolframalpha_app_id = 'RXYKRX-ELWU4E4K4X'
+# voices = engine.getProperty('voices')
+# engine.setProperty('voice', voices[1].id)
 
+wolframalpha_app_id = 'RXYKRX-ELWU4E4K4X'
 
 def speak(audio):
     engine.say(audio)
@@ -137,10 +139,13 @@ if __name__ == "__main__":
         elif 'how are you' in query:
             speak("I am fine, Sir thanks for asking. How are you sir, i hope you get well soon.")
 
-        elif 'creator' in query:
-            speak("Vikash is a nice guy , Currently he is studing in Motihaari college of Engineering")    
+        elif 'hello' in query or 'hi' in query or 'hey':
+            speak("Hi, How are you sir ")    
 
-        elif 'who are you' in query:
+        elif 'creator' in query or 'vikash' in query or 'vikas' in query:
+            speak("Vikash is a nice guy , Currently he is studing Computer Science at Motihaari college of Engineering")    
+
+        elif 'who are you' in query or 'yourself' in query or 'your name' in query:
             speak("I am Jarvis 1.0 personal AI assistant, i am created by Vikash, i can help you in various regards, I can search for you on the Internet,I can also play on Youtube, I can also grab information from wikipedia, i can try to make your life better, you just have to command me and I will Do for you.")    
 
         elif 'who am' in query:
@@ -151,8 +156,8 @@ if __name__ == "__main__":
             ytvd = TakeCommand()
             pywhatkit.playonyt(ytvd)
 
-        elif 'google' in query:
-            speak("What should I search?")
+        elif 'on google' in query:
+            speak("What should I search on Google?")
             search_Term = TakeCommand().lower()
             speak("Searching....")
             wb.open('https://www.google.com/search?q='+search_Term)
@@ -265,7 +270,7 @@ if __name__ == "__main__":
             except StopIteration:
                 print("No Results!")    
 
-        elif 'listening' in query:
+        elif 'listening' in query or 'listen' in query:
             speak("For how many second you want me to stop listening?")
             ans = int(TakeCommand())
             time.sleep(ans)
@@ -280,3 +285,7 @@ if __name__ == "__main__":
         elif 'ip' in query:
             ip = get('https://api.ipify.org/').text
             speak("Your IP address is"+ip)
+
+        else:
+            speak("Here some result on Google ")
+            wb.open('https://www.google.com/search?q='+query)
