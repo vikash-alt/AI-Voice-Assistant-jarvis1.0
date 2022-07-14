@@ -7,8 +7,6 @@ import psutil
 import pyjokes
 import os
 import pyautogui
-import PIL
-import random
 import json
 from requests import get
 from urllib.request import urlopen
@@ -136,6 +134,18 @@ if __name__ == "__main__":
                 if k == 27:
                     break
 
+        elif 'how are you' in query:
+            speak("I am fine, Sir thanks for asking. How are you sir, i hope you get well soon.")
+
+        elif 'creator' in query:
+            speak("Vikash is a nice guy , Currently he is studing in Motihaari college of Engineering")    
+
+        elif 'who are you' in query:
+            speak("I am Jarvis 1.0 personal AI assistant, i am created by Vikash, i can help you in various regards, I can search for you on the Internet,I can also play on Youtube, I can also grab information from wikipedia, i can try to make your life better, you just have to command me and I will Do for you.")    
+
+        elif 'who am' in query:
+            speak("If you can Talk then definately you are a Human")            
+
         elif 'youtube' in query:
             speak("What should I play on Youtube?")
             ytvd = TakeCommand()
@@ -156,6 +166,10 @@ if __name__ == "__main__":
         elif 'offline' in query:
             speak("Going Offline Sir! have a good day")
             quit()
+
+        elif 'love' in query:
+            print("Love is our 7th sense that destroys all 6 other sense And makes the person nonsense .")
+            speak("Love is our 7th sense that destroys all 6 other sense And makes the person nonsense .")
 
         elif 'word' in query:
             speak("Opening MS Word...")
