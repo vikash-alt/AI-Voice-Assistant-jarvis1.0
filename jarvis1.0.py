@@ -139,7 +139,7 @@ if __name__ == "__main__":
         elif 'how are you' in query:
             speak("I am fine, Sir thanks for asking. How are you sir, i hope you get well soon.")
 
-        elif 'hello' in query or 'hi' in query or 'hey':
+        elif 'hello' in query:
             speak("Hi, How are you sir ")    
 
         elif 'creator' in query or 'vikash' in query or 'vikas' in query:
@@ -285,7 +285,3 @@ if __name__ == "__main__":
         elif 'ip' in query:
             ip = get('https://api.ipify.org/').text
             speak("Your IP address is"+ip)
-
-        else:
-            speak("Here some result on Google ")
-            wb.open('https://www.google.com/search?q='+query)
